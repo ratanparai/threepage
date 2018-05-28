@@ -30,6 +30,7 @@ Teardown(ctx =>
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("Clean")
+.ContinueOnError()
 .Does(() => {
     DotNetCoreClean(solution,
         new DotNetCoreCleanSettings
