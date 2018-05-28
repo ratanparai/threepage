@@ -16,8 +16,13 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
-      fixWebpackSourcePaths: true
+      reports: [ 'html', 'lcovonly', 'text-summary', 'cobertura' ],
+      fixWebpackSourcePaths: true,
+      'report-config': {
+        cobertura: {
+          file: 'coverage.xml'
+        }
+      }
     },
     angularCli: {
       environment: 'dev'
@@ -28,6 +33,16 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+          base: 'Chrome',
+          flags: ['--no-sandbox']
+      }
+    },
     singleRun: false
   });
+
+  if(process.env.TRAVIS){
+    config.browsers = ['Chrome_travis_ci'];
+  }
 };

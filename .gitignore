@@ -331,3 +331,9 @@ ASALocalRun/
 
 # VS Code files
 .vs/
+
+# cakebuild tools folder
+tools/
+
+# generated coverage file
+coverage.xml
