@@ -9,9 +9,9 @@ before_install:
   - 'export DISPLAY=:99.0'
   - 'sh -e /etc/init.d/xvfb start'
   - curl -o dotnet.tar.gz https://dotnetcli.blob.core.windows.net/dotnet/Sdk/2.1.300/dotnet-sdk-2.1.300-linux-x64.tar.gz
-  - mkdir -p /usr/share/dotnet
-  - tar -zxf dotnet.tar.gz -C /usr/share/dotnet
-  - ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
+  - sudo mkdir -p /usr/share/dotnet
+  - sudo tar -zxf dotnet.tar.gz -C /usr/share/dotnet
+  - sudo ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 
 env:
   global:
