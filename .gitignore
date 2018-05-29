@@ -331,6 +331,7 @@ ASALocalRun/
 
 # VS Code files
 .vs/
+.vscode/
 
 # cakebuild tools folder
 tools/
